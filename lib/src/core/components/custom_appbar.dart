@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,7 +20,7 @@ PreferredSize buildCustomAppBar(
   Color? blurColor,
 }) {
   return PreferredSize(
-    preferredSize: Size(MediaQuery.of(context).size.width, 80),
+    preferredSize: Size(MediaQuery.of(context).size.width, Platform.isIOS ? 120 : 80),
     child: Blur(
       blur: 40,
       blurColor: blurColor ?? context.textLightColor,
@@ -27,8 +29,8 @@ PreferredSize buildCustomAppBar(
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness: context.isDark ? Brightness.light : Brightness.dark,
-          statusBarIconBrightness: context.isDark ? Brightness.light : Brightness.dark,
+          statusBarBrightness: context.isDark ? Brightness.dark : Brightness.light,
+          statusBarIconBrightness: context.isDark ? Brightness.dark : Brightness.light,
           statusBarColor: Colors.transparent,
         ),
         leading: !defaultLeading
@@ -41,7 +43,7 @@ PreferredSize buildCustomAppBar(
         actions: actions,
       ),
       child: SizedBox(
-        height: 80,
+        height: Platform.isIOS ? 120 : 80,
         width: MediaQuery.of(context).size.width,
       ),
     ).animate().moveY(

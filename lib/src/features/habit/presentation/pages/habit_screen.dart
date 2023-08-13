@@ -136,7 +136,10 @@ class _HabitBottomSheetState extends State<HabitBottomSheet> {
                           CustomButton(
                             press: () {
                               context.popX();
-                              context.goNamed(AppRoutes.editHabit.name, params: {'id': '${snapshot.data?.id}'});
+                              context.goNamed(
+                                AppRoutes.editHabit.name,
+                                queryParameters: {'id': '${snapshot.data?.id}'},
+                              );
                             },
                             width: 45,
                             height: 45,

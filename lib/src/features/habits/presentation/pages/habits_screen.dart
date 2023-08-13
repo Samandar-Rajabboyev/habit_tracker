@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:blur/blur.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
@@ -162,7 +164,7 @@ class _HomeScreenState extends ConsumerState<HabitsScreen> {
                   children: [
                     Positioned.fill(
                       child: ListView.builder(
-                        padding: const EdgeInsets.only(left: 8, right: 8, top: 80),
+                        padding: EdgeInsets.only(left: 8, right: 8, top: Platform.isIOS ? 120 : 80),
                         itemCount: snapshot.data?.length ?? 0,
                         itemBuilder: (context, index) {
                           return HabitCard(

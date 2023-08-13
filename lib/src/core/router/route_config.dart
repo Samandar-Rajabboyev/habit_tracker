@@ -32,7 +32,7 @@ final appRouter = GoRouter(
           path: AppRoutes.editHabit.path,
           parentNavigatorKey: rootNavigator,
           pageBuilder: (context, state) => CreateHabitScreen(
-            id: state.params['id'] == 'null' ? null : int.parse(state.params['id']!),
+            id: state.queryParameters['id'] == 'null' ? null : int.parse(state.queryParameters['id']!),
           ).defaultPage(state: state),
         ),
       ],

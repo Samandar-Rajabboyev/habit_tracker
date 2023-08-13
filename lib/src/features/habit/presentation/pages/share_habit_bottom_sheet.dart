@@ -207,7 +207,7 @@ class _ShareHabitBottomSheetState extends State<ShareHabitBottomSheet> {
                             ),
                           ),
                         ),
-                        Switch.adaptive(
+                        Switch(
                           value: showCompletionIndicator,
                           onChanged: (value) {
                             setState(() {

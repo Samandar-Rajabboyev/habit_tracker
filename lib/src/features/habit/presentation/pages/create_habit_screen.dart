@@ -96,6 +96,7 @@ class _CreateHabitScreenState extends State<CreateHabitScreen> {
 
   @override
   Widget build(BuildContext context) {
+    reminderHour = '07:00';
     return widget.id != null
         ? StreamBuilder<Habit?>(
             stream: context.read<HabitsCubit>().habit(widget.id!),
@@ -263,7 +264,7 @@ class _CreateHabitScreenState extends State<CreateHabitScreen> {
                         ),
                       ],
                     ),
-                    Switch.adaptive(
+                    Switch(
                       value: reminder,
                       onChanged: (value) => setState(() => reminder = !reminder),
                     ),

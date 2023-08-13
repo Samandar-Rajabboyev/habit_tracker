@@ -23,7 +23,7 @@ dependencies:
   floor: ^1.4.1
   sizer:
   flutter_svg:
-  go_router: ^6.0.9
+  go_router:
   flex_color_scheme: ^6.1.2
   flutter_riverpod: ^2.3.5
   # additional packages and plugins
@@ -38,7 +38,7 @@ dependencies:
   settings_ui: ^2.0.2
   reorderables: ^0.6.0
   app_icon_switcher: ^0.0.2
-  screenshot: ^1.3.0
+  screenshot: ^2.1.0
   share_plus: ^7.0.0
   permission_handler: ^10.2.0
   file_picker: ^5.3.0
